@@ -9,8 +9,8 @@
 import random
 
 def get_numbers_ticket(min, max, quantity):
-    if(min < 1 or max >1000 or min > max or quantity < min or quantity > max):
-        print("Input values should follow the rule: 1 <= min <= quantity <= max <= 1000")
+    if(min < 1 or max >1000 or min > max or quantity > max - min or quantity < 1):
+        print("Input values should follow the rule: 1 <= min < max <= 1000 and 1 <= quantity <= max - min")
         return []
     res_set = set()
     while(len(res_set) < quantity):
@@ -24,7 +24,7 @@ def get_numbers_ticket(min, max, quantity):
 lottery_numbers = get_numbers_ticket(1, 49, 6)
 print("Ваші лотерейні числа:", lottery_numbers)
 
-lottery_numbers = get_numbers_ticket(3, 9, 4)
+lottery_numbers = get_numbers_ticket(3, 9, 6)
 print("Ваші лотерейні числа:", lottery_numbers)
 
 lottery_numbers = get_numbers_ticket(1, 44, 8)
